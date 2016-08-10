@@ -1,6 +1,10 @@
 //Drew Holcomb 08/08/16 JavaScript 1
-var a = 5;
-var b = 7;
-var c = a + b;
+var a = 12;
+var b = '1E';
+var c = 'Amswer equals: ';
 
-alert(c);
+var d = a + b;
+
+var answer = c + d;
+
+console.log(answer);
