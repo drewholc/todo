@@ -3,5 +3,6 @@ console.log(userAns);
 if (userAns === "") {
   alert('you didnt type anything!');
 }else {
-  alert(userAns);
+  alert( 'You would like to ' + userAns);
 }
+console.log(userAns);
