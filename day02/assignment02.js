@@ -1,8 +1,8 @@
 var userAns = prompt('What would you like to do?');
-console.log(userAns);
-if (userAns === "" || userAns === null) {
+var newAns = userAns.trim();
+if (newAns === "" || newAns === null) {
   alert('you didnt type anything!');
 }else {
-  alert( 'You would like to ' + userAns);
+  alert( 'You would like to ' + newAns);
 }
-console.log(userAns);
+console.log(newAns);
