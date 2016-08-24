@@ -1,24 +1,36 @@
-var btn = document.getElementById('btn');
-var input1 = document.getElementById('input1');
-var input2 = document.getElementById('input2');
-var box = document.getElementById('box');
 
-function btnClick() {
-  alert(input1);
-  input1 = 'Hello JavaScript!';
-  box = input2;
-
+function goButtonClick(event) {
+	domInput1("Hello JavaScript!");
+	alert( domInput1() );
+	domBox( domInput2() );
 }
 
-btn.onclick = btnClick;
+function domInput1(newval) {
+	var input1Reference = document.getElementById("input1");
+	if(newval !== undefined) {
+		input1Reference.value = newval;
+	}
+	return input1Reference.value;
+}
 
+function domInput2(newval) {
+	var input2Reference = document.getElementById("input2");
+	if(newval !== undefined) {
+		input2Reference.value = newval;
+	}
+	return input2Reference.value;
+}
 
+function domBox(newval) {
+	var textBox = document.getElementById("box");
+	if(newval !== undefined) {
+		textBox.innerHTML = newval;
+	}
+}
 
-
-
-
-
-
+(function() {
+	document.getElementById("btn").onclick = goButtonClick;
+}());
 
 /*
 create js object for input 1, input2, btn and div
