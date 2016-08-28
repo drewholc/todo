@@ -1,4 +1,3 @@
-
 function goButtonClick(event) {
 	domInput1("Hello JavaScript!");
 	alert( domInput1() );
