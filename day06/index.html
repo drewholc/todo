@@ -8,58 +8,31 @@
 </head>
 <body>
   <style media="screen">
-    #box {
+    form {
       border: 1px solid black;
-      width: 350px;
-      height: 350px;
+      width: 250px;
     }
   </style>
 
   <form>
-
-    <label for="first">First Name
-      <input class="input" id="first" type="text" name="first" value="">
-    </label>
-    <br>
-    <label for="last">Last Name
-      <input class="input" id="last" type="text" name="last" value="">
-    </label>
-    <br>
-    <label for="number">Number
-      <input class="input" id="number" type="number" name="number" value="">
-    </label>
-    <br>
-    <label for="email">Email
-      <input class="input" id="email" type="email" name="email" value="">
-    </label>
-    <br>
-    <label for="tel">Phone Number
-      <input class="input" id="tel" type="tel" name="tel" value="">
-    </label>
-    <br>
-    <label for="password">Password
-      <input class="input" id="password" type="password" name="password" value="">
-    </label>
-      <input class="input" id="submit" type="submit" name="submit" />
-
+      <label for="first">First Name
+          <input type="text" id="first" name="first" value="">
+      </label>
+      <label for="last">Last Name
+          <input type="text" id="last" name="last" value="">
+      </label>
+      <label for="email">Email
+          <input type="email" id="email" name="email" value="">
+      </label>
+      <label for="phone">Phone Number
+          <input type="tel" id="phone" name="phone" value="">
+      </label>
+      <label for="pass">Password
+          <input type="password" id="pass" name="pass" value="">
+      </label>
+      <input type="submit" name="submit" id="submit" value="submit">
   </form>
-
-  <button id="add" type="button" name="button">click to add more!</button>
-
-  <ul>
-    <li>Item one</li>
-    <li>Item two</li>
-    <li>Item three</li>
-    <li>Item four</li>
-    <li>Item five</li>
-  </ul>
-
-
-  <p>Text output:</p>
-  <div id="box">
-    Output text can go here!
-  </div>
-
+  <button id="btn" type="button" name="button">click to add more</button>
 
 
   <script src="assignment06.js">  </script>
