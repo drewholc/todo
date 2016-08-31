@@ -14,11 +14,17 @@ var form = document.getElementsByClassName('form')[0];
 // }
 
 function newItem() {
-    var inputItem = document.createElement('li');
+    var newLI = document.createElement('li');
+    var inputItem = document.createElement('input');
     inputItem.id = 'newId';
     inputItem.name = 'new';
     inputItem.type = 'input';
-    inputItem.placeholder = 'New Item';
-    form.appendChild(inputItem);
+    inputItem.placeholder = 'Add Item';
+    newLI.appendChild(inputItem);
+    form.appendChild(newLI);
 }
 btn.onclick = newItem;
+
+function deleteItem() {
+ var deleteItem = document.removeElement('');
+}
