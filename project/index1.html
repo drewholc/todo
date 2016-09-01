@@ -11,13 +11,16 @@
 
   <div class="wrapper">
     <div class="inner">
-      <form>
-          <label for="item">To do list: </label>
-           <input id="item" type="text" size="20"><br>
-           <input id="submitButton" type="button" value="Add!">
+      <form id="addForm">
+        <h1>todos</h1>
+          <label for="item"></label>
+           <input id="item" type="text" size="25" placeholder="What needs to be done?" onkeypress="return itemAdded(event);"><br>
+           <input id="submitButton" type="button" value="Add!" onclick="doSomething();">
       </form>
       <ul id="ul">
       </ul>
+      <p class="text">Double click to edit items.</p>
+      <p class="text">Written by Drew Holcomb</p>
     </div>
   </div>
 
