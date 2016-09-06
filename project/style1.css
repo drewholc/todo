@@ -20,6 +20,15 @@ body, html {
   color:white;
 }
 
+.change {
+  border-radius: 50%;
+}
+
+.header {
+  text-align: center;
+  color: #1C2B25;
+}
+
 li {
   list-style-image: url('img/green-check-sm.png');
   color:black;
