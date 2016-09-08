@@ -1,23 +1,13 @@
 var button = document.getElementById("submitButton")[0];
-var taskInput = document.getElementById("new-task");
-var list = document.getElementById("ul");
+var todoInput = document.getElementById("item");
+var list = document.getElementById("list");
 
 
-function itemAdded(e){
-    // look for window.event in case event isn't passed in
-    e = e || window.event;
-    if (e.keyCode == 13)    {
-        document.getElementById('submitButton').click();
-        return false;
-    }else  return true;
-}
-
-
-
-function addItem() {
+function createItem() {
+        var ul = document.getElementById("ul");
         var textInput = document.getElementById("item");  //getting text input
         var text = textInput.value;   //getting value of text input element
-        var ul = document.getElementById("ul");  //getting element <ul> to add element to
+        var list = document.getElementById("list");  //getting element <ul> to add element to
         var li = document.createElement("li"),  //creating li element to add
             checkbox = document.createElement('input'),
             label = document.createElement('label'),
@@ -25,7 +15,7 @@ function addItem() {
             editButton = document.createElement('button');
             deleteButton = document.createElement('button');
 
-        checkBox.type = "checkbox";
+        checkbox.type = "checkbox";
         editInput.type = "text";
         editButton.innerText = "Edit";
         editButton.className = "edit";
@@ -33,15 +23,30 @@ function addItem() {
         deleteButton.className = "delete";
         label.innerText = text;
 
-        ul.appendChild(li);
-        li.appendChild(checkBox);
+        list.appendChild(li);
+        li.appendChild(checkbox);
         li.appendChild(label);
         li.appendChild(editInput);
-        li.appendChild(editButton);
         li.appendChild(deleteButton);
-      }
-    }
+        li.appendChild(editButton);
+
+
+
+     var reset = document.getElementById("addForm").reset();
+}
+
 
 
       //li.onclick = function() { //REMOVE ON CLICK
       //this.parentNode.removeChild(this);};//REMOVE ON CLICK
+
+
+function itemAdded(e){
+     e = e || window.event;
+     if (e.keyCode == 13)    {
+          document.getElementById('submitButton').click();
+          return false;
+     }else  return true;
+  }
+
+submitButton.addEventListener("click", createItem);
