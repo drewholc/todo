@@ -8,22 +8,21 @@
   <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 <body>
-  <div class="wrapper">
-    <div class ="inner">
-      <header>
-        <input type="title" id="title" name="title" value="" placeholder="To do">
-      </header>
-      <br>
-        <ul class="form">
-          <li>
-            <span><input type="text" id="no1" name="no1" value="" placeholder="Add Item"></span>
-          </li>
-        </ul>
-      </div>
-    </div>
-  <button id="btn" type="button" name="button">+</button>
+    <div class="container">
+      <p>
+        <label for="new-task">Add Item</label><input id="new-task" type="text"><button>Add</button>
+      </p>
 
-  <script   src="https://code.jquery.com/jquery-3.1.0.js"   integrity="sha256-slogkvB1K3VOkzAI8QITxV3VzpOnkeNVsKvtkYLMjfk="   crossorigin="anonymous"></script>
+      <h3>Todo</h3>
+      <ul id="incomplete-tasks">
+
+      </ul>
+
+      <h3>Completed</h3>
+      <ul id="completed-tasks">
+      </ul>
+    </div>
+
   <script type="text/javascript" src="script.js"></script>
 </body>
 </html>
