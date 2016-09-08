@@ -6,6 +6,15 @@ var addButton = document.getElementsByTagName("button")[0];
 var incompleteTasksHolder = document.getElementById("incomplete-tasks");
 var completedTasksHolder = document.getElementById("completed-tasks");
 
+function itemAdded(e){
+    // look for window.event in case event isn't passed in
+    e = e || window.event;
+    if (e.keyCode == 13)    {
+        document.getElementsByTagName('button').click();
+        return false;
+    }else  return true;
+}
+
 //New Task List Item
 var createNewTaskElement = function(taskString) {
   //Create List Item
@@ -26,12 +35,10 @@ var createNewTaskElement = function(taskString) {
 
   checkBox.type = "checkbox";
   editInput.type = "text";
-
   editButton.innerText = "Edit";
   editButton.className = "edit";
   deleteButton.innerText = "Delete";
   deleteButton.className = "delete";
-
   label.innerText = taskString;
 
 
@@ -130,24 +137,5 @@ var bindTaskEvents = function(taskListItem, checkBoxEventHandler) {
   checkBox.onchange = checkBoxEventHandler;
 };
 
-var ajaxRequest = function() {
-  console.log("AJAX Request");
-};
 
-// Set the click handler to the addTask function
-//addButton.onclick = addTask;
 addButton.addEventListener("click", addTask);
-addButton.addEventListener("click", ajaxRequest);
-
-
-// Cycle over the incompleteTaskHolder ul list items
-for(var i = 0; i <  incompleteTasksHolder.children.length; i++) {
-    // bind events to list item's children (taskCompleted)
-  bindTaskEvents(incompleteTasksHolder.children[i], taskCompleted);
-}
-// Cycle over the completeTaskHolder ul list items
-for(var i = 0; i <  completedTasksHolder.children.length; i++) {
-    // bind events to list item's children (taskIncompleted)
-  bindTaskEvents(completedTasksHolder.children[i], taskIncomplete);
-
-}
