@@ -1,34 +1,15 @@
-// Problem: User interaction doesn't provide desired results.
-// Solution: Add interactivity so the user can manage daily tasks
-
 var taskInput = document.getElementById("new-task");
 var addButton = document.getElementsByTagName("button")[0];
 var incompleteTasksHolder = document.getElementById("incomplete-tasks");
 var completedTasksHolder = document.getElementById("completed-tasks");
 
-function itemAdded(e){
-    // look for window.event in case event isn't passed in
-    e = e || window.event;
-    if (e.keyCode == 13)    {
-        document.getElementsByTagName('button').click();
-        return false;
-    }else  return true;
-}
 
-//New Task List Item
 var createNewTaskElement = function(taskString) {
-  //Create List Item
   var listItem = document.createElement("li");
-
-  //input (checkbox)
-  var checkBox = document.createElement("input"); // checkbox
-  //label
+  var checkBox = document.createElement("input");
   var label = document.createElement("label");
-  //input (text)
-  var editInput = document.createElement("input"); // text
-  //button.edit
+  var editInput = document.createElement("input");
   var editButton = document.createElement("button");
-  //button.delete
   var deleteButton = document.createElement("button");
 
       //Each element needs modifying
@@ -90,7 +71,6 @@ var editTask = function() {
 
 };
 
-
 // Delete an existing task
 var deleteTask = function() {
   console.log("Delete task...");
@@ -137,5 +117,12 @@ var bindTaskEvents = function(taskListItem, checkBoxEventHandler) {
   checkBox.onchange = checkBoxEventHandler;
 };
 
+function itemAdded(e){
+    e = e || window.event;
+    if (e.keyCode == 13)    {
+        document.getElementById('add').click();
+        return false;
+    }else  return true;
+}
 
-addButton.addEventListener("click", addTask);
+ addButton.addEventListener("click", addTask);
