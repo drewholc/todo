@@ -43,23 +43,29 @@ h4 {
 #ul {
   color: #555;
   font-size: 22px;
-  padding: 0 !important;
   width: 600px;
   font-family: courier, monospace;
   border: 1px solid #dedede;
+}
+ul#list {
+  padding: 0;
 }
 
 li {
   list-style: none;
   border-bottom: 1px dotted #ccc;
-  border-left: thick double #ffaa9f;
   height: 505px;
-  margin-left: 40px;
+  margin-left: 0;
   opacity:.5;
   text-indent: 25px;
   height: auto;
   padding: 10px;
   text-transform: capitalize;
+}
+
+input[type=checkbox] {
+  border-right: thick double #ffaa9f;
+
 }
 
 #ul li:hover {
@@ -92,6 +98,7 @@ ul li input[type=text] {
   display:none;
 }
 
+
 button {
   float: right;
   background: none;
@@ -102,10 +109,7 @@ button {
   color:blue;
 }
 
-.delete{
-  float:right;
-}
 
-.delete:hover {
+.destroy:hover {
   color: #cd0000;
 }

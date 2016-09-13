@@ -1,6 +1,7 @@
 var button = document.getElementById("submitButton")[0];
 var todoInput = document.getElementById("item");
 var list = document.getElementById("list");
+var deleteAll = document.getElementById("deleteAll");
 
 
 function createItem() {
@@ -20,7 +21,7 @@ function createItem() {
         editButton.innerText = "Edit";
         editButton.className = "edit";
         deleteButton.innerText = "Delete";
-        deleteButton.className = "delete";
+        deleteButton.className = "destroy";
         label.innerText = text;
 
         list.appendChild(li);
@@ -31,14 +32,28 @@ function createItem() {
         li.appendChild(editButton);
 
 
-
      var reset = document.getElementById("addForm").reset();
+
+      deleteButton.onclick = function() { //REMOVE ON CLICK
+        li.parentNode.removeChild(li);//REMOVE ON CLICK
+      };//REMOVE ON CLICK
+
+      editButton.onclick = function () {
+        // alert('working on click');
+        label.innerText = textInput.value;
+      //  label.innertext = changeText;
+      };
 }
 
+function deleteAllItems() {
+      var deleteAll = document.getElementById('deleteAll');
+      checkbox = document.getElementsByTagName('input[type="checkbox"]');
+      if (checkbox.checked)
+      deleteAll.onclick = function () {
+        li.parentNode.removeChild(li);
+      };
+}
 
-
-      //li.onclick = function() { //REMOVE ON CLICK
-      //this.parentNode.removeChild(this);};//REMOVE ON CLICK
 
 
 function itemAdded(e){
@@ -50,3 +65,4 @@ function itemAdded(e){
   }
 
 submitButton.addEventListener("click", createItem);
+deleteAll.addEventListener("click", deleteAllItems);
