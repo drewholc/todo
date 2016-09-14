@@ -1,12 +1,13 @@
 var button = document.getElementById("submitButton")[0];
 var todoInput = document.getElementById("item");
 var list = document.getElementById("list");
-var deleteAll = document.getElementById("deleteAll");
+
 
 
 function createItem() {
         var ul = document.getElementById("ul");
         var textInput = document.getElementById("item");  //getting text input
+        var deleteAll = document.getElementById("deleteAll");//getting delete all button
         var text = textInput.value;   //getting value of text input element
         var list = document.getElementById("list");  //getting element <ul> to add element to
         var li = document.createElement("li"),  //creating li element to add
@@ -17,6 +18,7 @@ function createItem() {
             deleteButton = document.createElement('button');
 
         checkbox.type = "checkbox";
+        label.className = "itemLabel";
         editInput.type = "text";
         editButton.innerText = "Edit";
         editButton.className = "edit";
@@ -34,26 +36,26 @@ function createItem() {
 
      var reset = document.getElementById("addForm").reset();
 
-      deleteButton.onclick = function() { //REMOVE ON CLICK
-        li.parentNode.removeChild(li);//REMOVE ON CLICK
+       deleteButton.onclick = function() { //REMOVE ON CLICK
+         li.parentNode.removeChild(li);//REMOVE ON CLICK
       };//REMOVE ON CLICK
 
-      editButton.onclick = function () {
-        // alert('working on click');
-        label.innerText = textInput.value;
-      //  label.innertext = changeText;
-      };
-}
+    //   deleteAll.onclick = function() {//REMOVE ALL ON CLICK
+    //       //alert('working on click');
+    //     if(checkbox.checked === true){
+    //       alert(label);
+    //     //removeChild(li);
+    //     //label.innerText = 'hello puppet';   //EDIT ON CLICK
+    //   }
+    // };//REMOVE ALL ON CLICK
 
-function deleteAllItems() {
-      var deleteAll = document.getElementById('deleteAll');
-      checkbox = document.getElementsByTagName('input[type="checkbox"]');
-      if (checkbox.checked)
-      deleteAll.onclick = function () {
-        li.parentNode.removeChild(li);
-      };
-}
 
+      //editButton.onclick = function () {    EDIT ON CLICK
+        // alert('working on click');    EDIT ON CLICK
+        //label.innerText = textInput.value;    EDIT ON CLICK
+      //  label.innertext = changeText;    EDIT ON CLICK
+    //  };    EDIT ON CLICK
+}
 
 
 function itemAdded(e){
@@ -65,4 +67,3 @@ function itemAdded(e){
   }
 
 submitButton.addEventListener("click", createItem);
-deleteAll.addEventListener("click", deleteAllItems);
