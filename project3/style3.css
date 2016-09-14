@@ -55,7 +55,7 @@ li {
   list-style: none;
   border-bottom: 1px dotted #ccc;
   height: 505px;
-  margin-left: 0;
+  margin: 0;
   opacity:.5;
   text-indent: 25px;
   height: auto;
@@ -63,8 +63,9 @@ li {
   text-transform: capitalize;
 }
 
-input[type=checkbox] {
-  border-right: thick double #ffaa9f;
+.itemLabel {
+  border-left: thick double #ffaa9f;
+  padding: 10px;
 
 }
 
@@ -92,6 +93,7 @@ input[type="checkbox"]:checked + label {
 
 input[type="checkbox"] {
   float:left;
+  align-items: center;
 }
 
 ul li input[type=text] {
@@ -105,11 +107,15 @@ button {
   border:0;
 }
 
-.edit:hover{
-  color:blue;
+.edit{
+  color:transparent;
 }
 
 
 .destroy:hover {
   color: #cd0000;
+}
+
+#deleteAll {
+  color:transparent;
 }
