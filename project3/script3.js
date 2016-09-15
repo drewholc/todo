@@ -3,7 +3,6 @@ var todoInput = document.getElementById("item");
 var list = document.getElementById("list");
 
 
-
 function createItem() {
         var ul = document.getElementById("ul");
         var textInput = document.getElementById("item");  //getting text input
@@ -14,15 +13,12 @@ function createItem() {
             checkbox = document.createElement('input'),
             label = document.createElement('label'),
             editInput = document.createElement('input'),
-            editButton = document.createElement('button');
             deleteButton = document.createElement('button');
 
         checkbox.type = "checkbox";
         label.className = "itemLabel";
         editInput.type = "text";
-        editButton.innerText = "Edit";
-        editButton.className = "edit";
-        deleteButton.innerText = "Delete";
+        deleteButton.innerText = "X";
         deleteButton.className = "destroy";
         label.innerText = text;
 
@@ -31,7 +27,6 @@ function createItem() {
         li.appendChild(label);
         li.appendChild(editInput);
         li.appendChild(deleteButton);
-        li.appendChild(editButton);
 
 
      var reset = document.getElementById("addForm").reset();
@@ -40,8 +35,15 @@ function createItem() {
          li.parentNode.removeChild(li);//REMOVE ON CLICK
       };//REMOVE ON CLICK
 
-    //   deleteAll.onclick = function() {//REMOVE ALL ON CLICK
-    //       //alert('working on click');
+       deleteAll.onclick = function() {//REMOVE ALL ON CLICK
+           //alert('working on click');
+          var values = [];
+
+          for (var i = label.length -1 ; i>= 0; i--)
+            if (label[i].type === "checkbox" && label[i].checked)
+              values.push(label[i].value);
+              console.log(values);
+
     //     if(checkbox.checked === true){
     //       alert(label);
     //     //removeChild(li);
@@ -50,12 +52,19 @@ function createItem() {
     // };//REMOVE ALL ON CLICK
 
 
-      //editButton.onclick = function () {    EDIT ON CLICK
-        // alert('working on click');    EDIT ON CLICK
-        //label.innerText = textInput.value;    EDIT ON CLICK
-      //  label.innertext = changeText;    EDIT ON CLICK
-    //  };    EDIT ON CLICK
+       label.onclick = function () {    //EDIT ON CLICK
+          var editText = prompt('Edit Input', label.innerHTML);    //EDIT ON CLICK
+          label.innerText = editText;    //EDIT ON CLICK
+       };    //EDIT ON CLICK
+};
 }
+
+
+ function setStorage(e){
+   e.preventDefault();
+
+   localStorage.setItem(label.innerText);
+ }
 
 
 function itemAdded(e){
