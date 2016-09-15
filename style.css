@@ -118,6 +118,7 @@ button {
 
 #deleteAll {
   opacity: .4;
+  display: none;
 }
 
 #deleteAll:hover {

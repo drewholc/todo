@@ -29,20 +29,21 @@ function createItem() {
         li.appendChild(deleteButton);
 
 
-     var reset = document.getElementById("addForm").reset();
+      var reset = document.getElementById("addForm").reset();
 
-       deleteButton.onclick = function() { //REMOVE ON CLICK
-         li.parentNode.removeChild(li);//REMOVE ON CLICK
-      };//REMOVE ON CLICK
+        deleteButton.onclick = function() { //REMOVE ON CLICK
+          li.parentNode.removeChild(li);//REMOVE ON CLICK
+       };//REMOVE ON CLICK
 
-       deleteAll.onclick = function() {//REMOVE ALL ON CLICK
-           //alert('working on click');
-          var values = [];
-
-          for (var i = label.length -1 ; i>= 0; i--)
-            if (label[i].type === "checkbox" && label[i].checked)
-              values.push(label[i].value);
-              console.log(values);
+//========================================REMOVE ALL ON CLICK=========================
+    //    deleteAll.onclick = function() {//REMOVE ALL ON CLICK
+    //        //alert('working on click');
+    //       var values = [];
+     //
+    //       for (var i = label.length -1 ; i>= 0; i--)
+    //         if (label[i].type === "checkbox" && label[i].checked)
+    //           values.push(label[i].value);
+    //           console.log(values);
 
     //     if(checkbox.checked === true){
     //       alert(label);
@@ -50,21 +51,22 @@ function createItem() {
     //     //label.innerText = 'hello puppet';   //EDIT ON CLICK
     //   }
     // };//REMOVE ALL ON CLICK
+//========================================REMOVE ALL ON CLICK=========================
 
 
        label.onclick = function () {    //EDIT ON CLICK
+         console.log('test');
           var editText = prompt('Edit Input', label.innerHTML);    //EDIT ON CLICK
           label.innerText = editText;    //EDIT ON CLICK
        };    //EDIT ON CLICK
-};
 }
 
 
- function setStorage(e){
-   e.preventDefault();
-
-   localStorage.setItem(label.innerText);
- }
+ // function setStorage(e){
+ //   e.preventDefault();
+ //
+ //   localStorage.setItem(label.innerText);
+ // }
 
 
 function itemAdded(e){
